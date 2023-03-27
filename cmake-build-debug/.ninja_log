@@ -1,0 +1,15 @@
+# ninja log v5
+2	552	7015925480246505	CMakeFiles/sdl_test.dir/main.cpp.obj	a9d96e3cb3c37051
+0	524	7015927971364490	CMakeFiles/sdl_test.dir/src/main.cpp.obj	a98a8f289bdd83be
+471	535	7015952543089245	sdl_test.exe	e94ccc4d9eccae82
+3	540	7015948403108052	CMakeFiles/sdl_test.dir/src/Main.cpp.obj	3a582e1444ccc2ee
+1	104	7015954304471250	build.ninja	fb039af8f7c599c4
+2	470	7015952542470461	CMakeFiles/sdl_test.dir/src/Game.cpp.obj	a04ecb99cdb92c04
+2	484	7015925823837511	CMakeFiles/sdl_test.dir/game.cpp.obj	2c3e688ab7796e9b
+3	530	7015927971424351	CMakeFiles/sdl_test.dir/src/game.cpp.obj	308e9496133f0319
+2	345	7015952153133253	CMakeFiles/sdl_test.dir/src/Line.cpp.obj	d3a1180425014b2e
+6	402	7015965494129455	CMakeFiles/sdl_test.dir/src/Line.cpp.obj	d3a1180425014b2e
+2	542	7015965495526737	CMakeFiles/sdl_test.dir/src/Game.cpp.obj	a04ecb99cdb92c04
+542	649	7015965496564762	sdl_test.exe	e94ccc4d9eccae82
+2	493	7015966991287110	CMakeFiles/sdl_test.dir/src/Game.cpp.obj	a04ecb99cdb92c04
+493	561	7015966991938663	sdl_test.exe	e94ccc4d9eccae82
