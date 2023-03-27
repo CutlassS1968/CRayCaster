@@ -1,10 +1,14 @@
+#include <ctime>
 #include "../include/Game.h"
-#include "../include/Line.h"
+#include "../include/raycaster.h"
 
-Game::Game(const char* title, int xPos, int yPos, int width, int height, int flags) {
+Game::Game(const char* title, int xPos, int yPos, int width, int height, int flags) :
+world(width, height),
+rayCaster(width, height, width/2, height/2){
     isRunning = true;
     screenWidth = width;
     screenHeight = height;
+
     // Initialize SDL
     if (SDL_Init(SDL_INIT_EVERYTHING) != 0) {
         std::cout << "[ERROR] %s" << SDL_GetError() << std::endl;
@@ -30,6 +34,15 @@ Game::Game(const char* title, int xPos, int yPos, int width, int height, int fla
             std::cout << "[LOG] Renderer created" << std::endl;
         }
     }
+
+    std::vector<Wall> walls;
+    int xOffset = screenWidth / 2;
+    int yOffset = screenHeight / 2;
+    walls.emplace_back(SDL_Point{xOffset + 0, yOffset + 0}, SDL_Point{xOffset + 10, yOffset + 0}, getRandomColor());
+    walls.emplace_back(SDL_Point{xOffset + 10, yOffset + 0}, SDL_Point{xOffset + 10, yOffset + 10}, getRandomColor());
+    walls.emplace_back(SDL_Point{xOffset + 10, yOffset + 10}, SDL_Point{xOffset + 0, yOffset + 10}, getRandomColor());
+    walls.emplace_back(SDL_Point{xOffset + 0, yOffset + 10}, SDL_Point{xOffset + 0, yOffset + 0}, getRandomColor());
+    world.addWallGroup("default", walls);
 }
 
 Game::~Game() {
@@ -51,26 +64,20 @@ void Game::handleEvents() {
     }
 }
 
-void Game::update() {
-
+void Game::update(Uint16 deltaTime) {
+    rayCaster.update(deltaTime);
 }
 
 void Game::render() {
     SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255);
     SDL_RenderClear(renderer);
-    // Start drawing
-
-    SDL_Point p1 = SDL_Point{0, 0};
-    SDL_Point p2 = SDL_Point{screenWidth, screenHeight};
-
-    Line l1 = Line(p1, p2);
-
-    SDL_SetRenderDrawColor(renderer, 0, 0, 255, 255);
-    SDL_RenderDrawLine(renderer, p1.x, p1.y, p2.x, p2.y);
-
-    SDL_Rect rect = SDL_Rect{0, 0, screenWidth/2, screenHeight/2};
-    SDL_RenderDrawRect(renderer, &rect);
-
-    // End Drawing
+    world.draw(renderer);
+    rayCaster.draw(renderer);
     SDL_RenderPresent(renderer);
+}
+
+SDL_Color Game::getRandomColor() {
+    return SDL_Color{ static_cast<Uint8>(std::rand() % 256),
+                      static_cast<Uint8>(std::rand() % 256),
+                      static_cast<Uint8>(std::rand() % 256), 255 };
 }

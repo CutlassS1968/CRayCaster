@@ -3,6 +3,11 @@
 #include <SDL.h>
 #include <iostream>
 
+#include "../include/Game.h"
+#include "../include/Line.h"
+#include "../include/WorldState.h"
+#include "../include/raycaster.h"
+
 class Game {
 
 public:
@@ -10,7 +15,7 @@ public:
     ~Game();
 
     void handleEvents();
-    void update();
+    void update(Uint16 deltaTime);
     void render();
 
     bool running() const { return isRunning; };
@@ -23,6 +28,10 @@ private:
     int screenWidth;
     int screenHeight;
 
+    WorldState world;
+    RayCaster rayCaster;
+
+    static SDL_Color getRandomColor();
 };
 
 

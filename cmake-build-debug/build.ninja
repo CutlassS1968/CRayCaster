@@ -70,6 +70,27 @@ build CMakeFiles/sdl_test.dir/src/Line.cpp.obj: CXX_COMPILER__sdl_test_Debug C$:
   OBJECT_DIR = CMakeFiles\sdl_test.dir
   OBJECT_FILE_DIR = CMakeFiles\sdl_test.dir\src
 
+build CMakeFiles/sdl_test.dir/src/WorldState.cpp.obj: CXX_COMPILER__sdl_test_Debug C$:/Users/Evan/CLionProjects/sdl_test/src/WorldState.cpp || cmake_object_order_depends_target_sdl_test
+  DEP_FILE = CMakeFiles\sdl_test.dir\src\WorldState.cpp.obj.d
+  FLAGS = -g -std=gnu++14
+  INCLUDES = -IC:/libs/SDL/include
+  OBJECT_DIR = CMakeFiles\sdl_test.dir
+  OBJECT_FILE_DIR = CMakeFiles\sdl_test.dir\src
+
+build CMakeFiles/sdl_test.dir/src/raycaster.cpp.obj: CXX_COMPILER__sdl_test_Debug C$:/Users/Evan/CLionProjects/sdl_test/src/raycaster.cpp || cmake_object_order_depends_target_sdl_test
+  DEP_FILE = CMakeFiles\sdl_test.dir\src\raycaster.cpp.obj.d
+  FLAGS = -g -std=gnu++14
+  INCLUDES = -IC:/libs/SDL/include
+  OBJECT_DIR = CMakeFiles\sdl_test.dir
+  OBJECT_FILE_DIR = CMakeFiles\sdl_test.dir\src
+
+build CMakeFiles/sdl_test.dir/src/Ray.cpp.obj: CXX_COMPILER__sdl_test_Debug C$:/Users/Evan/CLionProjects/sdl_test/src/Ray.cpp || cmake_object_order_depends_target_sdl_test
+  DEP_FILE = CMakeFiles\sdl_test.dir\src\Ray.cpp.obj.d
+  FLAGS = -g -std=gnu++14
+  INCLUDES = -IC:/libs/SDL/include
+  OBJECT_DIR = CMakeFiles\sdl_test.dir
+  OBJECT_FILE_DIR = CMakeFiles\sdl_test.dir\src
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target sdl_test
@@ -78,7 +99,7 @@ build CMakeFiles/sdl_test.dir/src/Line.cpp.obj: CXX_COMPILER__sdl_test_Debug C$:
 #############################################
 # Link the executable sdl_test.exe
 
-build sdl_test.exe: CXX_EXECUTABLE_LINKER__sdl_test_Debug CMakeFiles/sdl_test.dir/src/Main.cpp.obj CMakeFiles/sdl_test.dir/src/Game.cpp.obj CMakeFiles/sdl_test.dir/src/Line.cpp.obj
+build sdl_test.exe: CXX_EXECUTABLE_LINKER__sdl_test_Debug CMakeFiles/sdl_test.dir/src/Main.cpp.obj CMakeFiles/sdl_test.dir/src/Game.cpp.obj CMakeFiles/sdl_test.dir/src/Line.cpp.obj CMakeFiles/sdl_test.dir/src/WorldState.cpp.obj CMakeFiles/sdl_test.dir/src/raycaster.cpp.obj CMakeFiles/sdl_test.dir/src/Ray.cpp.obj
   FLAGS = -g
   LINK_LIBRARIES = -lSDL2main  -lSDL2  -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   LINK_PATH = -LC:/libs/SDL/lib/x64

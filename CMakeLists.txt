@@ -12,7 +12,7 @@ link_directories(${SDL2_LIB_DIR})
 add_executable(sdl_test
         src/Main.cpp
         src/Game.cpp
-        include/Game.h src/Line.cpp include/Line.h include/Wall.h)
+        include/Game.h src/Line.cpp include/Line.h include/Wall.h src/WorldState.cpp include/WorldState.h src/raycaster.cpp include/raycaster.h src/Ray.cpp include/Ray.h)
 
 # These libraries are in SDL/lib/x64
 target_link_libraries(${PROJECT_NAME} SDL2main SDL2)
